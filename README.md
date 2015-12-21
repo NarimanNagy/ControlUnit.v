@@ -199,13 +199,24 @@ module ControlUnit
 		else if ((op == 6'h0 && funct == 6'h0)) // SLL
 		begin
 			AluOp = 4'b1000;
-		end else if ((op == 6'h0 && funct == 6'h2)) begin // SRL
+		end 
+		
+		else if ((op == 6'h0 && funct == 6'h2))// SRL
+		begin 
 			AluOp = 4'b1001;
-		end else if ((op == 6'h0 && funct == 6'h3)) begin // SRA
+		end 
+		
+		else if ((op == 6'h0 && funct == 6'h3))// SRA
+		begin 
 			AluOp = 4'b1010;
-		end else if ((op == 6'h0 && funct == 6'h20) || op == 6'h8 || op == 6'h2B || op == 6'h23) begin  // ADD - signed
+		end
+		
+		else if ((op == 6'h0 && funct == 6'h20) || op == 6'h8 || op == 6'h2B || op == 6'h23) // ADD - signed 
+		begin 
 			AluOp = 4'b1011;
-		end else if ((op == 6'h0 && funct == 6'h22) || op == 6'h4 || op == 6'h5) begin // SUB - signed - AND bne, beq
+		end 
+		
+		else if ((op == 6'h0 && funct == 6'h22) || op == 6'h4 || op == 6'h5) begin // SUB - signed - AND bne, beq
 			AluOp = 4'b1100;
 		end else begin
 			AluOp = 4'b1111;
